@@ -10,7 +10,7 @@ import java.util.List;
 public class DespesaDAO {
 
     public boolean adicionar(Despesas despesa) {
-        String sql = "INSERT INTO despesas (usuario_id, nome, valor, vencimento, status, mes) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO despesas (usuario_id, name, valor, vencimento, status, mes) VALUES (?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = SQLiteConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -44,7 +44,7 @@ public class DespesaDAO {
                 Despesas d = new Despesas(
                         rs.getInt("id"),
                         rs.getInt("usuario_id"),
-                        rs.getString("nome"),
+                        rs.getString("name"),
                         rs.getDouble("valor"),
                         rs.getString("vencimento"),
                         rs.getString("status"),
