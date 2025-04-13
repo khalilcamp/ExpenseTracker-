@@ -7,8 +7,11 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
+    public static Stage primaryStage;
+
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage stage) {
+        primaryStage = stage;
         LoginView loginView = new LoginView();
         Scene scene = new Scene(loginView.getRoot(), 400, 300);
         primaryStage.setTitle("Login - Controle de Contas");
